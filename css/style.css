@@ -246,17 +246,18 @@ h2.titel {
   display: block;
   margin-left: 40px;
   margin-right: 40px;
-}
-
-.form-field:not(:last-child) {
   margin-bottom: 28px;
 }
+.form-field.coment {
+  margin-bottom: 20px;
+}
 
-.form-input {
+.form-field .form-input {
   width: 448px;
   height: 40px;
   padding-left: 42px;
   border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
 }
 
 .form-label {
@@ -266,7 +267,7 @@ h2.titel {
   font-weight: 400;
 
   font-size: 12px;
-  line-height: 1.667;
+  line-height: 1.167;
   letter-spacing: 0.01em;
 
   color: var(--primary-text-color);
@@ -287,6 +288,11 @@ h2.titel {
   left: 15px;
   transform: translateY(-50%);
 }
+.coment-input {
+  resize: none;
+  padding: 12px 16px;
+  min-height: 120px;
+}
 
 .modal-text {
   margin-top: 2px;
@@ -297,6 +303,39 @@ h2.titel {
   line-height: 1.15;
 
   color: var(--titel-link-color);
+}
+
+.modal-box {
+  text-align: center;
+}
+.contract {
+  margin-bottom: 30px;
+}
+.contract-link {
+  color: var(--accent-color);
+}
+.contract-field {
+  position: relative;
+}
+.checkbox-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-24px, -50%);
+
+  width: 16px;
+  height: 15px;
+
+  background-color: transparent;
+  border: 2px solid var(--titel-link-color);
+  border-radius: 4px;
+}
+.checkbox:checked + .checkbox-icon {
+  background-color: var(--accent-color);
+  background-image: url(../img/icon-check.svg);
+  border: transparent;
+  background-size: contain;
+  background-origin: border-box;
 }
 
 /* Блок герой */
@@ -332,10 +371,12 @@ h2.titel {
 }
 
 .button {
-  padding: 10px 32px;
+  width: 200px;
+  height: 50px;
   border: none;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 0;
 
   color: var(--primary-bg-color);
   background-color: var(--accent-color);
@@ -559,9 +600,15 @@ h2.titel {
   padding-top: 12px;
   margin-left: 70px;
 }
+
 .footer-box-links .item:not(:last-child) {
   margin-right: 10px;
 }
+
+.footer-box-links:last-child {
+  margin-left: auto;
+}
+
 .footer-box-links .link {
   display: flex;
   align-items: center;
@@ -615,6 +662,48 @@ h2.titel {
   text-transform: uppercase;
 }
 
+.submit {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 29px;
+  margin-left: 12px;
+}
+
+.submit-icon {
+  margin: 13px 28px 13px 10px;
+  fill: var(--primary-bg-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit:hover .submit-icon,
+.submit:focus .submit-icon {
+  fill: var(--accent-color);
+}
+.mail-input {
+  width: 358px;
+  height: 50px;
+  padding: 15px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  color:var(--logo-down-color);
+}
+
+.mail-field {position: relative;
+  
+}
+
+.mail-label {position: absolute;
+top 50%;
+left: 16px;
+transform: translateY(50%);
+transition: transform  250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mail-input:focus + .mail-label, .mail-input:not(:placeholder-shown) + .mail-label {transform: translateY(60px) scale(1.2);
+}
+
 /* Портфолио */
 .galerry {
   padding-top: 94px;
@@ -634,6 +723,7 @@ h2.titel {
 .galerry .item:not(:last-child) {
   margin-right: 8px;
 }
+
 
 /* кнопки галереии */
 .galerry-button {

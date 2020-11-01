@@ -84,11 +84,26 @@
               <use href="./img/sprite.svg#icon-email"></use>
             </svg>
           </label>
-          <label class="form-field">
-            <textarea name="coment" rows="10" type="text" class="form-input" placeholder="Введите текст"></textarea>
+          <label class="form-field coment">
+            <textarea
+              name="coment"
+              rows="6"
+              type="text"
+              class="form-input coment-input"
+              placeholder="Введите текст"
+            ></textarea>
             <span class="form-label">Комментарий</span>
           </label>
-          <button type="submit" class="button">Отправить</button>
+          <div class="modal-box">
+            <div role="group" class="contract">
+              <label class="contract-field">
+                Соглашаюсь с рассылкой и принимаю <a href="" class="contract-link">Условия договора</a>
+                <input type="checkbox" name="checkbox" value="contract" class="checkbox visually-hidden" />
+                <span class="checkbox-icon"></span>
+              </label>
+            </div>
+            <button type="submit" class="button">Отправить</button>
+          </div>
         </form>
       </div>
     </div>
@@ -396,6 +411,22 @@
               ></a>
             </li>
           </ul>
+        </div>
+        <div class="footer-box-links">
+          <p class="join">Подпишитесь на рассылку</p>
+          <form class="mail">
+            <label class="mail-field">
+              <input type="email" name="mail" class="mail-input" placeholder=" " /><samp class="mail-label"
+                >E-mail</samp
+              >
+            </label>
+            <button type="submit" class="button submit">
+              Подписаться
+              <svg class="submit-icon" width="24" height="24">
+                <use href="./img/sprite.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </footer>
